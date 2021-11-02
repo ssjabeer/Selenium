@@ -1,0 +1,46 @@
+package com.Finalproject.runnerfile;
+
+import java.io.IOException;
+
+import org.openqa.selenium.support.PageFactory;
+
+import com.Finalproject.Baseclass;
+import com.Finalproject.Pom;
+
+public class Runnerclass extends Baseclass {
+	public static void main(String[] args) throws IOException {
+		Browser("chrome");
+		seturl("http://adactinhotelapp.com/index.php");
+		PageFactory.initElements(driver, Pom.class);
+		iwait();
+		Uid(Pom.user, "ssjabeer");
+		Uid(Pom.pwd, "Jabeer@07");
+		Click(Pom.login);
+		iwait();
+		selectbyvalue(Pom.Location, "London");
+		selectbyvalue(Pom.Hotels, "Hotel Cornice");
+		selectbyvalue(Pom.Roomtype, "Super Deluxe");
+		selectbyVisibleText(Pom.Noofrooms, "2 - Two");
+		selectbyVisibleText(Pom.Adult, "2 - Two");
+		selectbyVisibleText(Pom.child, "1 - One");
+		Click(Pom.Submit);
+		Click(Pom.Radiobtn);
+		Click(Pom.contin);
+		Uid(Pom.Firstname,"JABEER");
+		Uid(Pom.Lastname, "SYED YOUSUFF");
+		Uid(Pom.Address, "SAIDAPET");
+		Uid(Pom.ccnumber, "4562317896312403");
+		selectbyvalue(Pom.cctype,"VISA");
+		selectbyvalue(Pom.Expmnth, "11");
+		selectbyvalue(Pom.Expyr, "2022");
+		Uid(Pom.Cvv,"786");
+		Click(Pom.Booknow);
+		iwait();
+		Click(Pom.Myitinerary);
+		Takess("Booked");
+		
+		
+		
+	}
+
+	}
